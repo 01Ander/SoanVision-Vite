@@ -11,6 +11,7 @@ export const searchForm = document.querySelector('.search-bar__form');
 export const searchInput = document.querySelector('.search-bar__input');
 export const searchIcon = document.querySelector('.search-bar__icon');
 export const galleryContainer = document.querySelector('.gallery__container');
+export const uploaderContainer = document.querySelector('.photo-uploader');
 
 import axios from 'axios';
 

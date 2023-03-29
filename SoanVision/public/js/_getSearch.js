@@ -1,4 +1,4 @@
-import { searchForm, searchInput, searchIcon, api, } from "./_vars";
+import { searchForm, searchInput, searchIcon, api, uploaderContainer } from "./_vars";
 import { render } from "./_renderPhotos";
 import { getPhotos } from "./_getData";
 
@@ -10,6 +10,8 @@ function searchPhotos(query) {
       const photos = res.data.photos;
       console.log(photos);
       render(photos,`Resultados por: ${query}`);
+      uploaderContainer.classList.add('inactive')
+
 
       const searchReturn = document.querySelector('.return-gallery');
       searchReturn.classList.remove('inactive');
@@ -17,8 +19,8 @@ function searchPhotos(query) {
       searchReturn.addEventListener('click', () => {
         getPhotos();
         searchInput.value='';
+        uploaderContainer.classList.remove('inactive')
       })
-
 
     })
     .catch(error => {
