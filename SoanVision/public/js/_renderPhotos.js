@@ -1,7 +1,7 @@
 import {galleryContainer} from './_vars';
 import { openModal } from './_modal';
 
-export function render(arr,title,arrow) {
+export function render(arr,title) {
   galleryContainer.innerHTML='';
 
   const galleryHeader =document.createElement('div');
@@ -11,13 +11,10 @@ export function render(arr,title,arrow) {
   galleryTitle.innerText=title;
   galleryTitle.classList.add('gallery__title');
 
-  if (arrow === 'x') {
-    const searchReturn =document.createElement('span');
-    searchReturn.innerText=arrow;
-    galleryHeader.appendChild(searchReturn);
-    galleryTitle.classList.remove('gallery__title');
-    galleryTitle.classList.add('gallery__title-search');
-  }
+  const searchReturn =document.createElement('span');
+  searchReturn.innerText='Regresar a la galería principal';
+  searchReturn.classList.add('return-gallery');
+  searchReturn.classList.add('inactive');
 
   const toRender = [];
   arr.forEach(element => {
@@ -47,6 +44,7 @@ export function render(arr,title,arrow) {
     });
   });
   galleryHeader.appendChild(galleryTitle);
+  galleryHeader.appendChild(searchReturn);
   galleryContainer.appendChild(galleryHeader);
   galleryContainer.append(...toRender);
 }
