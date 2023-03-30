@@ -1,9 +1,9 @@
 .photo-uploader
-  width: calc( 100% - 40px )
+  width: calc( 100% - $s2 - 8px )
   min-height: 240px
   border: 4px dashed $gris-tormenta
   border-radius: 20px
-  margin: 0 16px 20px 16px
+  margin: 0 $s 20px
   display: flex
   flex-direction: column
   justify-content: space-evenly
@@ -29,3 +29,18 @@
 
 .inactive
   display: none
+
+@media ( min-width:440px )
+  .photo-uploader
+    width: calc( 100% - $m2 - 8px )
+    margin: 0 $m 20px
+
+@media ( min-width:768px )
+  .photo-uploader
+    width: calc( 100% - $l2 - 8px )
+    margin: 0 $l 20px
+
+@media ( min-width:1024px )
+  .photo-uploader
+    max-width: 900px
+    margin: 0 auto 20px auto

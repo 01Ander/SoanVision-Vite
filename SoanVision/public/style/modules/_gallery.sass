@@ -1,7 +1,5 @@
 .gallery
-  padding: 0 16px
-  display: flex
-  flex-direction: column
+  padding: 0 $s
   margin-bottom: 20px
   .gallery__title
     text-align: center
@@ -11,9 +9,11 @@
     margin-bottom: 20px
   .gallery__container
     width: 100%
-    display: flex
-    flex-direction: column
-    gap: 8px
+    .gallery__container--wrapper
+      display: flex
+      flex-direction: column
+      gap: 8px
+      align-items: center
     .gallery__image-container
       cursor: pointer
       width: 100%
@@ -26,6 +26,7 @@
   background-color: $gris-tormenta
 
 .gallery__header
+  width: 100%
   display: flex
   flex-direction: column
   justify-content: center
@@ -40,8 +41,7 @@
 
 
 .return-gallery
-  width: 100%
-  height: 36px
+  padding: 8px 24px
   border-radius: 16px
   margin-bottom: 20px
   display: flex
@@ -54,3 +54,28 @@
 
 .inactive
   display: none
+
+
+@media ( min-width:440px )
+  .gallery
+    padding: 0 $m
+    .gallery__container
+      .gallery__container--wrapper
+        display: grid
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+        grid-template-rows: 1fr
+
+
+@media ( min-width:768px )
+  .gallery
+    padding: 0 $l
+    .gallery__container
+      .gallery__container--wrapper
+        display: grid
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+        grid-template-rows: 1fr
+
+@media ( min-width:1024px )
+  .gallery .gallery__container
+    max-width: 908px
+    margin: 0 auto

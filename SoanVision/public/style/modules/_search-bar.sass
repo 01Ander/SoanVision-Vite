@@ -1,9 +1,9 @@
 .search-bar
   margin-bottom: 24px
   .search-bar__form
-    width: calc( 100% -  74px)
+    width: calc( 100% - $s2 - 40px)
     height: 32px
-    margin: 0 16px
+    margin: 0 $s
     padding: 0 20px
     border: 1px solid $gris-tormenta
     border-radius: 16px
@@ -19,3 +19,18 @@
       margin-left: 12px
       &:hover
         cursor: pointer
+
+@media ( min-width:440px )
+  .search-bar .search-bar__form
+    width: calc( 100% - $m2 - 40px)
+    margin: 0 $m
+
+@media ( min-width:768px )
+  .search-bar .search-bar__form
+    width: calc( 100% - $l2 - 40px)
+    margin: 0 $l
+
+@media ( min-width:1024px )
+  .search-bar .search-bar__form
+    max-width: 866px
+    margin: 0 auto

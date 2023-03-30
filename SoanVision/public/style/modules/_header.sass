@@ -1,7 +1,7 @@
 .header__wrapper
-  width: calc( 100% - 32px)
+  width: calc( 100% - $s2)
   height: 80px
-  padding: 0 16px
+  padding: 0 $s
   display: flex
   flex-direction: row
   // gap: 28PX
@@ -19,3 +19,20 @@
   font-family: 'LoraBold', sans-serif
   font-size: 32px
   color: $mariano
+
+@media ( min-width:440px )
+  .header__wrapper
+    width: calc( 100% - $m2)
+    padding: 0 $m
+
+@media ( min-width:768px )
+  .header__wrapper
+    width: calc( 100% - $l2)
+    padding: 0 $l
+
+@media ( min-width:1440px )
+  .header__wrapper
+    max-width: 1280px
+    padding: 0 $l
+    justify-content: center
+    gap: 40px

@@ -7,6 +7,9 @@ export function render(arr,title) {
   const galleryHeader =document.createElement('div');
   galleryHeader.classList.add('gallery__header');
 
+  const galleryContainerWrapper = document.createElement('div');
+  galleryContainerWrapper.classList.add('gallery__container--wrapper');
+
   const galleryTitle = document.createElement('h1');
   galleryTitle.innerText=title;
   galleryTitle.classList.add('gallery__title');
@@ -46,5 +49,6 @@ export function render(arr,title) {
   galleryHeader.appendChild(galleryTitle);
   galleryHeader.appendChild(searchReturn);
   galleryContainer.appendChild(galleryHeader);
-  galleryContainer.append(...toRender);
+  galleryContainer.appendChild(galleryContainerWrapper);
+  galleryContainerWrapper.append(...toRender);
 }
