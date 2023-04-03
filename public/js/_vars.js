@@ -13,6 +13,7 @@ export const searchIcon = document.querySelector('.search-bar__icon');
 export const galleryContainer = document.querySelector('.gallery__container');
 export const uploaderContainer = document.querySelector('.photo-uploader');
 
+
 import axios from 'axios';
 
 const API_KEY = import.meta.env.VITE_API_KEY;

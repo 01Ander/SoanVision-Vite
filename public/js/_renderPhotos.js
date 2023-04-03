@@ -1,7 +1,8 @@
-import {galleryContainer} from './_vars';
+import { galleryContainer} from './_vars';
 import { openModal } from './_modal';
 
 export function render(arr,title) {
+  console.log('hicimos render');
   galleryContainer.innerHTML='';
 
   const galleryHeader =document.createElement('div');
@@ -53,4 +54,7 @@ export function render(arr,title) {
   galleryContainer.appendChild(galleryHeader);
   galleryContainer.appendChild(galleryContainerWrapper);
   galleryContainerWrapper.append(...toRender);
+
 }
+
+
