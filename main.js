@@ -4,10 +4,10 @@ import './public/js/_getSearch';
 import { configureLogo } from './public/js/_logo.js';
 import { configureSearchIcon, configureUploadIcon, configureGithubIcon, configureNotionIcon } from './public/js/_icons';
 import { listenToScreenWidth } from './public/js/_getWidth';
-import { listenToScreenWidth } from './public/js/_listenWidth';
 
 
 function initApp() {
+  getPhotos();
   configureLogo();
   configureSearchIcon();
   configureUploadIcon();

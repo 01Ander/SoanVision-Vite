@@ -2,7 +2,7 @@ import { api } from './_vars';
 import { listenToScreenWidth } from './_getWidth';
 
 import { render } from './_renderPhotos';
-import { listenToScreenWidth } from './_listenWidth';
+
 
 export function getPhotos() {
   api
