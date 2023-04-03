@@ -22,6 +22,7 @@ export function render(arr,title) {
   const toRender = [];
   arr.forEach(element => {
     const srcImage = element.src.original;
+    const srcImageOriginal = element.src.original;
     const autor = element.photographer;
     const article = document.createElement('div');
     const imgWrapper = document.createElement('div');
@@ -30,6 +31,7 @@ export function render(arr,title) {
     article.classList.add('gallery__image-container');
     imgWrapper.classList.add('gallery__image-wrapper');
     img.classList.add('gallery__image');
+    img.loading = "lazy";
 
     imgWrapper.appendChild(img);
 
@@ -43,7 +45,7 @@ export function render(arr,title) {
     toRender.push(article);
 
     img.addEventListener('click', () => {
-      openModal(srcImage, autor);
+      openModal(srcImageOriginal, autor);
     });
   });
   galleryHeader.appendChild(galleryTitle);

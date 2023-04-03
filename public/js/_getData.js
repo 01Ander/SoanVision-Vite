@@ -3,8 +3,9 @@ import { render } from './_renderPhotos';
 
 export function getPhotos() {
   api
-    .get('/curated?page=1&per_page=5')
+    .get('/curated')
     .then(res => {
+      console.log(res);
       const photos = res.data.photos;
       render(photos,'Galería Principal');
     })

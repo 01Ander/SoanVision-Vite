@@ -8,7 +8,7 @@
     color: $mariano
     margin-bottom: 20px
   .gallery__container
-    width: 100%
+    max-width: 976px
     .gallery__container--wrapper
       display: flex
       flex-direction: column
@@ -16,13 +16,15 @@
       align-items: center
     .gallery__image-container
       cursor: pointer
-      width: 100%
+      max-width: 320px
       .gallery__image
         width: 100%
 
 .gallery__image-wrapper
   width: 100%
   min-height: 150px
+  // max-height: 420px
+
   background-color: $gris-tormenta
 
 .gallery__header
@@ -61,9 +63,7 @@
     padding: 0 $m
     .gallery__container
       .gallery__container--wrapper
-        display: grid
-        grid-template-columns: repeat(2, minmax(0, 1fr))
-        grid-template-rows: 1fr
+        flex-wrap: wrap
 
 
 @media ( min-width:768px )
@@ -71,11 +71,18 @@
     padding: 0 $l
     .gallery__container
       .gallery__container--wrapper
-        display: grid
-        grid-template-columns: repeat(3, minmax(0, 1fr))
-        grid-template-rows: 1fr
+        height: 3700px
+        .gallery__image-container
+          max-width: 300px
+
+
 
 @media ( min-width:1024px )
-  .gallery .gallery__container
-    max-width: 908px
-    margin: 0 auto
+  .gallery
+    .gallery__container
+      // max-width: 976px
+      margin: 0 auto
+      .gallery__container--wrapper
+          height: 2200px
+          .gallery__image-container
+            max-width: 280px

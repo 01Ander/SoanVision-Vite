@@ -5,7 +5,7 @@ import { getPhotos } from "./_getData";
 
 function searchPhotos(query) {
   api
-    .get(`search?query=${query}&page2&per_page=5`)
+    .get(`search?query=${query}`)
     .then(res => {
       const photos = res.data.photos;
       console.log(photos);
