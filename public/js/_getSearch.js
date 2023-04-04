@@ -1,6 +1,7 @@
 import { searchForm, searchInput, searchIcon, api, uploaderContainer } from "./_vars";
 import { render } from "./_renderPhotos";
 import { getPhotos } from "./_getData";
+import { listenToScreenWidth } from "./_getWidth";
 
 
 function searchPhotos(query) {
@@ -10,7 +11,12 @@ function searchPhotos(query) {
       const photos = res.data.photos;
       console.log(photos);
       render(photos,`Resultados por: ${query}`);
-      uploaderContainer.classList.add('inactive')
+      uploaderContainer.classList.add('inactive');
+      const containerWrapper = document.querySelector('.gallery__container--wrapper');
+      const countContainer = document.querySelectorAll('.gallery__image-container');
+      const countArray = [...countContainer];
+
+      listenToScreenWidth(countArray,containerWrapper);
 
 
       const searchReturn = document.querySelector('.return-gallery');

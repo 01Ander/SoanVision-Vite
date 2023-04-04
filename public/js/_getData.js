@@ -8,7 +8,7 @@ export function getPhotos() {
     .get('/curated')
     .then(res => {
       const photos = res.data.photos;
-      render(photos,'contenedor grande')
+      render(photos,'Galería Principal')
       // listenToScreenWidth(photos)
       const containerWrapper = document.querySelector('.gallery__container--wrapper');
       const countContainer = document.querySelectorAll('.gallery__image-container');
