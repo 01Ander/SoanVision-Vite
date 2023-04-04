@@ -1,9 +1,7 @@
 import { galleryContainer} from './_vars';
 import { openModal } from './_modal';
 
-
 export function render(arr,title) {
-  console.log('hicimos render');
   galleryContainer.innerHTML='';
 
   const galleryHeader =document.createElement('div');
